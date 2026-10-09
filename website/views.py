@@ -33,7 +33,7 @@ def home(request):
             'title' : 'Portfolio Website',
             'description' : 'Designed and developed a responsive portfolio website to showcase my skills, projects, achievements and professional profile.',
             'techstacks' : 'Django, Bootstrap, HTML, CSS',
-            'repo' : '#',
+            'repo' : 'https://github.com/ragavi-dr/Django-Portfolio.git/',
         },
         {
             'title' : 'Student Perfomance Analysis System',
