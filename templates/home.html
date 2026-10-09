@@ -1,0 +1,162 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ragavi | Portfolio</title>
+  <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand sticky-top nav-glass">
+        <div class="container">
+            <a class="navbar-brand gradient-text fw-bold" href="#home">Ragavi&lt;/&gt;</a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="#about">About</a>
+                <a class="nav-link" href="#skills">Skills</a>
+                <a class="nav-link" href="#education">Education</a>
+                <a class="nav-link" href="#projects">Projects</a>
+                <a class="nav-link" href="#activity">Activity</a>
+                <a class="nav-link" href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+  <!-- HERO -->
+  <section id="home">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-7">
+          <h1 class="display-4 fw-bold">Hi, I'm Ragavi</h1>
+          <h3 class="gradient-text">Junior Python Developer</h3>
+          <p class="text-secondary">Open to work. I build simple, clean web apps with Python and Django.</p>
+          <a href="#contact" class="btn btn-grad">Send Email</a>
+          <a href="{{links.linkedin}}" target="_blank" class="btn btn-outline-light rounded-pill ms-2">LinkedIn</a>
+          <a href="{{links.github}}" target="_blank" class="btn btn-outline-light rounded-pill ms-1">GitHub</a>
+        </div>
+        <div class="col-md-5 text-center mt-4 mt-md-0">
+          <img src="{% static 'css/images/me.jpg' %}" class="photo" alt="Ragavi">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <h4 class="gradient-text">I'm Ragavi</h4>
+          <p>Motivated BCA graduate with a strong foundation in Python, OOPs, SQL and MySQL, with 60+ coding problems solved on GeeksforGeeks and experience organizing college events.</p>
+          <div class="focus-box">Python Development</div>
+          <div class="focus-box">Problem Solving</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="container text-center">
+      <h2 class="section-title">My Skills</h2>
+      <span class="skill-pill">Python</span>
+      <span class="skill-pill">OOPs</span>
+      <span class="skill-pill">Django</span>
+      <span class="skill-pill">SQL</span>
+      <span class="skill-pill">MySQL</span>
+      <span class="skill-pill">HTML</span>
+      <span class="skill-pill">CSS</span>
+      <span class="skill-pill">Bootstrap</span>
+      
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <div class="container">
+      <h2 class="section-title">Education &amp; Certifications</h2>
+      <div class="row g-4">
+        <div class="col-md-6">
+          <h4 class="gradient-text mb-3">Education</h4>
+          {% for e in education %}
+        <div class="card project-card p-3 mb-3">
+          <h5>{{e.degree}}</h5>
+          <div class="info-text">{{e.college}} | {{e.batch}} | {{e.cgpa}}</div>
+          <div class="info-text">{{e.Affiliation}}</div>
+        </div>        
+        {% endfor %}
+      </div>
+      <div class="col-md-6">
+        <h4 class="gradient-text mb-3">Certifications</h4>
+        {% for c in certifications %}
+        <div class="card project-card p-3 mb-3">
+          <h5>{{c.name}}</h5>
+          <div class="info-text">{{c.issuer}}</div>
+        </div> 
+        {% endfor %}
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+        <h2 class="section-title">My Projects</h2>
+        <div class="row g-4 justify-content-center">
+            {% for p in projects %}
+            <div class="col-md-4">
+                <div class="card h-100 project-card p-3">
+                    <h5 class="gradient-text">{{p.title}}</h5>
+                    <p>{{p.description}}</p>
+                    <small class="text-secondary">{{p.techstack}}</small>
+                    <a href="{{p.repo}}" target="_blank" class="btn btn-grad btn-sm mt-3">Repository</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+  </section>
+
+  <section id="activity">
+    <div class="container">
+      <h2 class="section-title">GitHub &amp; Coding Activity</h2>
+      <div class="row g-4 justify-content-center">
+        {% for a in activity %}
+        <div class="col-md-4">
+          <div class="card project-card p-3 text-center h-100">
+            <h5 class="gradient-text">{{a.platform}}</h5>
+            <p class="info-text">{{a.stat}}</p>
+            <a href="{{a.link}}" target="_blank" class="btn btn-grad btn-sm">View Profile</a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container" style="max-width: 600px;">
+      <h2 class="section-title">Contact</h2>
+      {% for m in messages %}
+      <div class="alert alert-success">{{m}}</div>
+      {% endfor %}
+      <form method="post" class="card project-card p-4">
+        {% csrf_token %}
+        <label class="mb-1">Name</label>
+        {{form.name}}
+        <label class="mb-1">Email</label>
+        {{form.email}}
+        <label class="mb-1">Message</label>
+        {{form.message}}
+        <button type="submit" class="btn btn-grad ms-auto">Send a Message</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="text-center py-4 text-secondary">
+    @ 2026 Ragavi. All rights reserved.
+  </footer>
+</body>
+</html>

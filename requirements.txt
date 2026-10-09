@@ -1,0 +1,7 @@
+asgiref==3.12.1
+Django==5.2.17
+django-crispy-forms==2.7
+py4j==0.10.9.9
+pyspark==4.1.2
+sqlparse==0.6.0
+tzdata==2026.3

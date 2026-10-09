@@ -1,0 +1,82 @@
+body {
+  background: radial-gradient(circle at 80% 15%, #3a0d5c 0%, #12031f 45%, #07010d 100%) fixed;
+  color: #fff;
+}
+section { padding: 70px 0; }
+.section-title { text-align: center; font-weight: 700; margin-bottom: 40px; }
+.gradient-text { color: #b44cff; }
+.btn-grad {
+  background: linear-gradient(90deg, #9b3dff, #ff5c8a);
+  border: 0; color: #fff; border-radius: 30px; padding: 8px 24px;
+}
+.btn-grad:hover { color: #fff; opacity: .9; }
+.photo {
+  width: 260px; height: 260px; border-radius: 50%; object-fit: cover;
+  border: 2px solid rgba(180, 76, 255, .5);
+  box-shadow: 0 0 40px rgba(180, 76, 255, .6);
+}
+.focus-box {
+  border: 1px solid rgba(180, 76, 255, .5); border-radius: 10px;
+  padding: 10px 16px; color: #c98bff; margin-bottom: 12px;
+}
+.skill-pill {
+  display: inline-block; margin: 6px; padding: 8px 18px;
+  border: 1px solid rgba(180, 76, 255, .6); border-radius: 30px;
+  background: rgba(155, 61, 255, .12);
+}
+.skill-pill:hover { background: rgba(155, 61, 255, .35); box-shadow: 0 0 12px rgba(180, 76, 255, .6); }
+html{scroll-behavior: smooth;}
+section { scroll-margin-top: 70px;}
+.nav-glass {
+  background: rgba(7,1,13,75);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(180,76,255,.25);
+}
+.project-card{
+  background: rgba(255,255,255,05);
+  border: 1px solid rgba(180,76,255,.4);
+  border-radius: 14px;
+}
+.project-card:hover {box-shadow: 0 0 20px rgba(180, 76, 255, .5);}
+
+.project-card p{
+  color : #b44cff;
+}
+
+.project-card small{
+  color: #b44cff !important;
+}
+
+.info-text{color: #d9a8ff;} 
+
+#education .card.project-card h5,
+#education .card.project-card .info-text,
+#education .card.project-card small{
+  color: #b44cff;
+}
+
+#contact form{
+  background: rgba(30,10,50,0.75);
+  border: 1px solid rgba(180, 76, 255, .4);
+  border-radius: 14px;
+}
+
+#contact label { color: #d9a8ff;}
+#contact input,
+#contact textarea{
+  display: block;
+  width: 100%;
+  margin-bottom: 16px;
+  padding: 8px 12px;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(180,76,255,.4);
+  border-radius: 8px;
+  color: #fff;
+}
+
+#contact input:focus,
+#contact textarea:focus {
+  outline: none;
+  border-color: #b44cff;
+  box-shadow: 0 0 0 .2rem rgba(180, 76, 255, .25);
+}
